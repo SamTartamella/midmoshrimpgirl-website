@@ -1,1 +1,26 @@
-<p>product works!</p>
+<div style="display: flex; flex-direction: column">
+  <div style="display: flex; flex-direction: row">
+    <div>
+      <img [src]="tempImagePath" />
+    </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        margin: 1em 5em;
+      "
+    >
+      <h2>{{ productName }}</h2>
+      <h3>{{ productPrice }}</h3>
+
+      <mat-card appearance="outlined">
+        <mat-card-content style="display: flex; flex-direction: row">
+          <p>Quanitity:</p>
+          <button mat-flat-button>+</button>
+          <button mat-flat-button>-</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
