@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-main',
+  selector: 'app-header',
   standalone: true,
   imports: [
     MatButtonToggleModule,
@@ -16,9 +16,9 @@ import { RouterOutlet, RouterLink, Router } from '@angular/router';
     RouterLink,
     RouterOutlet,
   ],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
 })
-export class MainComponent {
+export class HeaderComponent {
   imagePath: string = '/assets/whiteshrimp.png';
 }
