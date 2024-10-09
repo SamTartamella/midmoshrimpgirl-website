@@ -1,37 +1,47 @@
 <div>
-  <div style="display: flex; justify-content: center">
-    <div style="display: flex; align-items: center">
-      <h1
-        style="
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          font-size: 7em;
-        "
-      >
-        MIDMO
-      </h1>
+  <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <div style="display: flex; justify-content: center">
+      <div style="display: flex; align-items: center">
+        <h1
+          style="
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+            font-size: 7em;
+          "
+        >
+          MIDMO
+        </h1>
+      </div>
+      <div>
+        <!-- <mat-card appearance="outlined" style="height: 20vh; width: 20vw"> -->
+        <img
+          style="
+            height: 20vh;
+            width: 20vw;
+            padding: 1em;
+            max-width: 249px;
+            max-height: 281px;
+            min-width: 249px;
+            min-height: 281px;
+          "
+          [src]="imagePath"
+        />
+        <!-- </mat-card> -->
+      </div>
+      <div style="display: flex; align-items: center">
+        <h1
+          style="
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+            font-size: 7em;
+          "
+        >
+          SHRIMP GIRL
+        </h1>
+      </div>
     </div>
-    <div>
-      <!-- <mat-card appearance="outlined" style="height: 20vh; width: 20vw"> -->
-      <img style="height: 20vh; width: 20vw; padding: 1em" [src]="imagePath" />
-      <!-- </mat-card> -->
-    </div>
-    <div style="display: flex; align-items: center">
-      <h1
-        style="
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-          font-size: 7em;
-        "
-      >
-        SHRIMP GIRL
-      </h1>
-    </div>
-  </div>
-  <div>
+  </a>
+  <div style="margin-top: -1em">
     <mat-divider></mat-divider>
-  </div>
-  <div>
-    <!-- <button mat-flat-button [mat-menu-trigger-for]="Neocardinia">
-      Neocardinia
-    </button> -->
   </div>
 </div>
