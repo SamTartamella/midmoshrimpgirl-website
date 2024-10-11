@@ -14,7 +14,7 @@ export class GetProductInfoService {
         return of({
           productName: 'Red Cherry Shrimp',
           productPrice: 4.0,
-          productImagePath: 'src/assets/websitepictures/redcherry.jpg',
+          productImagePath: '/assets/websitepictures/redcherrysized.jpg',
         });
       }
       // case 'bloody-mary': {
@@ -39,7 +39,7 @@ export class GetProductInfoService {
         return of({
           productName: 'ERROR',
           productPrice: 999,
-          productImagePath: 'src/assets/whiteshrimp.png',
+          productImagePath: '/assets/whiteshrimp.png',
         });
       }
     }

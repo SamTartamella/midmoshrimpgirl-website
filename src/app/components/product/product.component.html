@@ -1,14 +1,16 @@
 <div style="display: flex; flex-direction: column">
-  <div
+  <mat-card
+    appearance="outlined"
     style="
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      padding: 2em;
     "
   >
     <div>
-      <img [src]="productImagePath" />
+      <img mat-card-image [src]="productImagePath" />
     </div>
     <div style="display: flex; flex-direction: column; margin: 1em 5em">
       <h2>{{ productName }}</h2>
@@ -49,5 +51,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-  </div>
+  </mat-card>
 </div>
