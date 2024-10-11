@@ -1,24 +1,51 @@
 <div style="display: flex; flex-direction: column">
-  <div style="display: flex; flex-direction: row">
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    "
+  >
     <div>
-      <img [src]="tempImagePath" />
+      <img [src]="productImagePath" />
     </div>
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        width: 50vw;
-        margin: 1em 5em;
-      "
-    >
+    <div style="display: flex; flex-direction: column; margin: 1em 5em">
       <h2>{{ productName }}</h2>
-      <h3>{{ productPrice }}</h3>
+      <h3>{{ totalPrice | currency }}</h3>
 
-      <mat-card appearance="outlined">
-        <mat-card-content style="display: flex; flex-direction: row">
-          <p>Quanitity:</p>
-          <button mat-flat-button>+</button>
-          <button mat-flat-button>-</button>
+      <mat-card
+        appearance="outlined"
+        style="max-width: 277px; min-width: 277px"
+      >
+        <mat-card-content>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              margin: -1em 0em;
+            "
+          >
+            <p>Quantity:</p>
+            <button
+              mat-flat-button
+              id="increase"
+              (click)="increaseQuantity()"
+              style="margin: 1em"
+            >
+              +
+            </button>
+            <p>{{ quantityCount }}</p>
+            <button
+              mat-flat-button
+              id="decrease"
+              (click)="decreaseQuantity()"
+              style="margin: 1em"
+            >
+              -
+            </button>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>

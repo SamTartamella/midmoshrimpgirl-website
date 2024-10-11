@@ -14,18 +14,32 @@ export class GetProductInfoService {
         return of({
           productName: 'Red Cherry Shrimp',
           productPrice: 4.0,
+          productImagePath: 'src/assets/websitepictures/redcherry.jpg',
         });
       }
-      case 'Bloody Mary Shrimp': {
-        return of({
-          productName: 'Bloody Mary Shrimp',
-          productPrice: 7.0,
-        });
-      }
+      // case 'bloody-mary': {
+      //   return of({
+      //     productName: 'Bloody Mary Shrimp',
+      //     productPrice: 7.99,
+      //   });
+      // }
+      // case 'galaxy-snowflake-blue': {
+      //   return of({
+      //     productName: 'Blue Galaxy Snowflake',
+      //     productPrice: 10.0,
+      //   });
+      // }
+      // case 'panda-black': {
+      //   return of({
+      //     productName: 'Black Panda Shrimp',
+      //     productPrice: 10.5,
+      //   });
+      // }
       default: {
         return of({
           productName: 'ERROR',
           productPrice: 999,
+          productImagePath: 'src/assets/whiteshrimp.png',
         });
       }
     }

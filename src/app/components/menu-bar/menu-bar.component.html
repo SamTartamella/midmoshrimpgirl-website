@@ -1,10 +1,11 @@
-<nav style="display: flex; justify-content: center; margin-top: 1em">
-  <div style="margin: 0.5em">
+<nav class="nav-bar">
+  <div class="nav-button">
     <button mat-flat-button [mat-menu-trigger-for]="Neocardinia">
       Neocardinia
     </button>
     <mat-menu #Neocardinia="matMenu">
       <a
+        l
         routerLink="products/red-cherry"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
@@ -23,8 +24,20 @@
   <div style="margin: 0.5em">
     <button mat-flat-button [mat-menu-trigger-for]="Cardinia">Cardinia</button>
     <mat-menu #Cardinia="matMenu">
-      <button mat-menu-item>Blue Galaxy Snowflake</button>
-      <button mat-menu-item>Black Panda</button>
+      <a
+        routerLink="products/galaxy-snowflake-blue"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <button mat-menu-item>Blue Galaxy Snowflake</button>
+      </a>
+      <a
+        routerLink="products/panda-black"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <button mat-menu-item>Black Panda</button>
+      </a>
       <button mat-menu-item>Cardinia Care</button>
     </mat-menu>
   </div>

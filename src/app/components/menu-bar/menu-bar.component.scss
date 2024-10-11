@@ -1,3 +1,15 @@
 a {
     all: unset;
 }
+
+.nav-bar {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 1em;
+    min-width: 942px
+}
+
+.nav-button {
+    margin: 0.5em
+}
+
