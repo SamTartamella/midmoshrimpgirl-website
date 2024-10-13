@@ -20,5 +20,5 @@ import { RouterOutlet, RouterLink, Router } from '@angular/router';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  imagePath: string = '/assets/whiteshrimp.png';
+  imagePath: string = 'assets/whiteshrimp.png';
 }
