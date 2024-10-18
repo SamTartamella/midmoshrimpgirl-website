@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ import { RouterOutlet, RouterLink, Router } from '@angular/router';
     MatButtonModule,
     RouterLink,
     RouterOutlet,
+    MatIconModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

@@ -17,24 +17,27 @@ export class GetProductInfoService {
           productImagePath: 'assets/websitepictures/redcherrysized.jpg',
         });
       }
-      // case 'bloody-mary': {
-      //   return of({
-      //     productName: 'Bloody Mary Shrimp',
-      //     productPrice: 7.99,
-      //   });
-      // }
-      // case 'galaxy-snowflake-blue': {
-      //   return of({
-      //     productName: 'Blue Galaxy Snowflake',
-      //     productPrice: 10.0,
-      //   });
-      // }
-      // case 'panda-black': {
-      //   return of({
-      //     productName: 'Black Panda Shrimp',
-      //     productPrice: 10.5,
-      //   });
-      // }
+      case 'bloody-mary': {
+        return of({
+          productName: 'Bloody Mary Shrimp',
+          productPrice: 7.99,
+          productImagePath: 'assets/websitepictures/bloodymaryresized.jpg',
+        });
+      }
+      case 'galaxy-snowflake-blue': {
+        return of({
+          productName: 'Blue Galaxy Snowflake',
+          productPrice: 10.0,
+          productImagePath: 'assets/websitepictures/galaxysnowflakeblueresized.jpg',
+        });
+      }
+      case 'panda-black': {
+        return of({
+          productName: 'Black Panda Shrimp',
+          productPrice: 10.5,
+          productImagePath: 'assets/websitepictures/pandablackresized.jpg'
+        });
+      }
       default: {
         return of({
           productName: 'ERROR',
