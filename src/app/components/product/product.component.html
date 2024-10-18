@@ -10,46 +10,53 @@
     "
   >
     <div>
-      <img mat-card-image [src]="productImagePath" />
+      <img mat-card-image [src]="product.productImagePath" />
     </div>
-    <div style="display: flex; flex-direction: column; margin: 1em 5em">
-      <h2>{{ productName }}</h2>
-      <h3>{{ totalPrice | currency }}</h3>
-
-      <mat-card
-        appearance="outlined"
-        style="max-width: 277px; min-width: 277px"
-      >
-        <mat-card-content>
-          <div
-            style="
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              margin: -1em 0em;
-            "
-          >
-            <p>Quantity:</p>
-            <button
-              mat-flat-button
-              id="increase"
-              (click)="increaseQuantity()"
-              style="margin: 1em"
+    <div style="display: flex; flex-direction: column; margin: 0em 5em; height: 35vh; justify-content: space-around;">
+      <div>
+        <h2>{{ product.productName }}</h2>
+        <h3>{{ totalPrice | currency }}</h3>
+      </div>
+      <div>
+        <mat-card
+          appearance="outlined"
+          style="max-width: 277px; min-width: 277px"
+        >
+          <mat-card-content>
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: -1em 0em;
+              "
             >
-              +
-            </button>
-            <p>{{ quantityCount }}</p>
-            <button
+              <p>Quantity:</p>
+
+              <button
               mat-flat-button
               id="decrease"
               (click)="decreaseQuantity()"
               style="margin: 1em"
-            >
-              -
+              >
+                -
+              </button>
+              <p>{{ quantityCount }}</p>
+              <button
+              mat-flat-button
+              id="increase"
+              (click)="increaseQuantity()"
+              style="margin: 1em"
+              >
+                +
             </button>
-          </div>
-        </mat-card-content>
-      </mat-card>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div>
+      <button mat-flat-button style="width: 100%">Add to Cart</button>
+      </div>
     </div>
   </mat-card>
 </div>
