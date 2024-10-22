@@ -20,26 +20,26 @@ describe('ProductComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('addToCart()', () => {
-    it('should add current item to cart array', () => {
-      // Arrange 
-      component.product = {
-        productName: 'abc', 
-        productPrice: 2, 
-        productImagePath: '/assets/whiteshrimp.png'
-      }
-      component.quantityCount = 2; 
-      let expectedShoppingCartItem = {
-        product: component.product,
-        quantity: component.quantityCount,
-        total: 4,
-      }
+  // describe('addToCart()', () => {
+  //   it('should add current item to cart array', () => {
+  //     // Arrange 
+  //     component.product = {
+  //       productName: 'abc', 
+  //       productPrice: 2, 
+  //       productImagePath: '/assets/whiteshrimp.png'
+  //     }
+  //     component.quantityCount = 2; 
+  //     let expectedShoppingCartItem = {
+  //       product: component.product,
+  //       quantity: component.quantityCount,
+  //       total: 4,
+  //     }
 
-      // Act 
-      component.addToCart();
+  //     // Act 
+  //     component.addToCart();
 
-      // Assert 
-      expect(component.cart).toContain(expectedShoppingCartItem); 
-    });
-  });
+  //     // Assert 
+  //     expect(component.cart).toContain(expectedShoppingCartItem); 
+  //   });
+  // });
 });

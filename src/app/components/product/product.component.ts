@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product.model';
 import { CurrencyPipe } from '@angular/common';
+import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 
 @Component({
   selector: 'app-product',
@@ -28,6 +29,8 @@ export class ProductComponent implements OnInit {
   productPrice: number = 0;
   quantityCount: number = 1;
   totalPrice: number = 0;
+
+  cart: ShoppingCartItem[] = []; 
 
   ngOnInit(): void {
     this.route.url
@@ -62,8 +65,16 @@ export class ProductComponent implements OnInit {
     this.totalPrice = this.quantityCount * this.productPrice;
   }
 
-  addToCard(): void {
+  addToCart(): void {
+    throw new Error("Not implemented");
+    // let newItem: ShoppingCartItem = {
+    //   product: this.product, 
+    //   quantity: this.quantityCount,
+    //   total: this.totalPrice
+    // }
+    // this.cart.push(newItem); 
+  }
+
     //needs to create a shoppingCartItem - Product, Quantity, Total
     //send shoppingCartItem to shopping cart component 
-  }
 }
