@@ -78,6 +78,4 @@ export class ProductComponent implements OnInit {
     this.cartService.updateCart(newItem);
   }
 
-    //needs to create a shoppingCartItem - Product, Quantity, Total
-    //send shoppingCartItem to shopping cart component 
 }
