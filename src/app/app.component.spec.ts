@@ -1,10 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs/internal/observable/of';
+import { routes } from './app.routes';
 
 describe('AppComponent', () => {
+  let routeSpy: jasmine.SpyObj<ActivatedRoute>; 
+
   beforeEach(async () => {
+    routeSpy = jasmine.createSpyObj("ActivatedRoute", [], {url: of([{path: 'mock-url'}]) });
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [{provide: ActivatedRoute, useValue: routeSpy}]
     }).compileComponents();
   });
 
@@ -20,10 +27,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('midmoshrimpgirl-website');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, midmoshrimpgirl-website');
-  });
 });

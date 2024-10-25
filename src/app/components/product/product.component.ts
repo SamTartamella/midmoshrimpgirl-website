@@ -19,7 +19,7 @@ import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 export class ProductComponent implements OnInit {
   constructor(
     private getProductInfoService: GetProductInfoService,
-    private route: ActivatedRoute
+    public route: ActivatedRoute
   ) {}
 
   product: Product = 
