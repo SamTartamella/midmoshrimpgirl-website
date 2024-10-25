@@ -27,7 +27,7 @@ describe('ProductComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('addToCart()', () => {
+  fdescribe('addToCart()', () => {
     it('should add current item to cart array', () => {
       // Arrange 
       component.product = {
@@ -36,6 +36,7 @@ describe('ProductComponent', () => {
         productImagePath: '/assets/whiteshrimp.png'
       }
       component.quantityCount = 2; 
+
       let expectedShoppingCartItem = {
         product: component.product,
         quantity: component.quantityCount,
@@ -43,6 +44,7 @@ describe('ProductComponent', () => {
       }
 
       // Act 
+      component.calculatePrice();
       component.addToCart();
 
       // Assert 

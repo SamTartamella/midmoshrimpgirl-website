@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { Product } from '../../models/product.model';
 import { CurrencyPipe } from '@angular/common';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
+import { GetCurrentShoppingCartService } from '../../services/getCurrentShoppingCart/get-current-shopping-cart';
 
 @Component({
   selector: 'app-product',
@@ -19,6 +20,7 @@ import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 export class ProductComponent implements OnInit {
   constructor(
     private getProductInfoService: GetProductInfoService,
+    private cartService: GetCurrentShoppingCartService,  
     public route: ActivatedRoute
   ) {}
 
@@ -26,6 +28,7 @@ export class ProductComponent implements OnInit {
     {productName: 'placeholder', 
      productPrice: 999, 
      productImagePath: '/assets/whiteshrimp.png'};  
+
   productPrice: number = 0;
   quantityCount: number = 1;
   totalPrice: number = 0;
@@ -62,17 +65,17 @@ export class ProductComponent implements OnInit {
   }
 
   calculatePrice(): void {
-    this.totalPrice = this.quantityCount * this.productPrice;
+    this.totalPrice = this.quantityCount * this.product.productPrice;
   }
 
   addToCart(): void {
-    throw new Error("Not implemented");
-    // let newItem: ShoppingCartItem = {
-    //   product: this.product, 
-    //   quantity: this.quantityCount,
-    //   total: this.totalPrice
-    // }
-    // this.cart.push(newItem); 
+    debugger;
+    let newItem: ShoppingCartItem = {
+      product: this.product, 
+      quantity: this.quantityCount,
+      total: this.totalPrice
+    }
+    this.cartService.updateCart(newItem);
   }
 
     //needs to create a shoppingCartItem - Product, Quantity, Total
