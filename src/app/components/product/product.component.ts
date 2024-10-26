@@ -69,13 +69,13 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(): void {
-    debugger;
+    
     let newItem: ShoppingCartItem = {
       product: this.product, 
       quantity: this.quantityCount,
       total: this.totalPrice
     }
-    this.cartService.updateCart(newItem);
+    this.cartService.addToCart(newItem);
   }
 
 }

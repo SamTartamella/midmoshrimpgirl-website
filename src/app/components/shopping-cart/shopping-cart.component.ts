@@ -3,23 +3,21 @@ import { MatTableModule } from '@angular/material/table';
 import { Product } from '../../models/product.model';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 import { GetCurrentShoppingCartService } from '../../services/getCurrentShoppingCart/get-current-shopping-cart';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { SelectionModel } from '@angular/cdk/collections';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, MatCheckboxModule, MatButtonModule],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.scss'
 })
 export class ShoppingCartComponent implements OnInit {
+  selection = new SelectionModel<ShoppingCartItem>(false, []); 
 
-  testProduct: Product = 
-    {productName: 'Red Cherry Shrimp', productPrice: 4.0, productImagePath: 'assets/websitepictures/redcherrysized.jpg'};
-
-  testShoppingCartItem: ShoppingCartItem = {product: this.testProduct, quantity: 5, total: (this.testProduct.productPrice * 5)};
-  testShoppingCartItem2: ShoppingCartItem = {product: this.testProduct, quantity: 10, total: (this.testProduct.productPrice * 10)};
-
-  columnsToDisplay: string[] = ['Product', 'Quantity', 'Total'];
+  columnsToDisplay: string[] = ['Product', 'Quantity', 'Total', 'Select'];
   shoppingCartItems: ShoppingCartItem[] = [];
 
   constructor(private cartService: GetCurrentShoppingCartService) {
@@ -27,5 +25,14 @@ export class ShoppingCartComponent implements OnInit {
   }
   ngOnInit(): void {
     this.cartService.currentCartObservable.subscribe(updatedCart => this.shoppingCartItems = updatedCart);
+  }
+
+  toggleSelection(item: ShoppingCartItem) {
+    
+    this.selection.toggle(item); 
+  }
+
+  removeFromCart(item: ShoppingCartItem) {
+    this.cartService.removeFromCart(item); 
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, first } from 'rxjs';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 
 @Injectable({
@@ -13,9 +13,31 @@ export class GetCurrentShoppingCartService {
   currentShoppingCart = new BehaviorSubject<ShoppingCartItem[]>(this.emptyCart);  
   currentCartObservable = this.currentShoppingCart.asObservable(); 
 
-  updateCart(newCartItem : ShoppingCartItem) //in the future do this one by one and just add on? avoid copying?
+  addToCart(newCartItem : ShoppingCartItem)
   {
     this.currentShoppingCart.value.push(newCartItem); 
     this.currentShoppingCart.next(this.currentShoppingCart.value); 
   }
+
+  removeFromCart(itemToRemove : ShoppingCartItem)
+  {
+    let newCart: ShoppingCartItem[]; 
+    newCart = this.currentShoppingCart.value.filter(item => GetCurrentShoppingCartService.isNotEqual(item, itemToRemove));
+    this.currentShoppingCart.next(newCart);
+  }
+
+  static isNotEqual(firstItem: ShoppingCartItem, secondItem: ShoppingCartItem) : boolean {
+    if(firstItem.product.productName == secondItem.product.productName &&
+      firstItem.product.productPrice == secondItem.product.productPrice &&
+      firstItem.product.productImagePath == secondItem.product.productImagePath &&
+      firstItem.quantity == secondItem.quantity &&
+      firstItem.total == secondItem.total) {
+        return false;
+      }
+    return true;
+  }
+
+    
+    
+  
 }

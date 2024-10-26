@@ -19,5 +19,5 @@ describe('ShoppingCartComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });  
 });
