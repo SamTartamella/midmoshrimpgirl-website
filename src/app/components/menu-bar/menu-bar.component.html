@@ -45,9 +45,27 @@
       Aquatic Plants
     </button>
     <mat-menu #AquaticPlants="matMenu">
-      <button mat-menu-item>Duckweed</button>
-      <button mat-menu-item>Süsswassertang</button>
-      <button mat-menu-item>Java Moss</button>
+      <a
+        routerLink="products/duckweed"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <button mat-menu-item>Duckweed</button>
+      </a>
+      <a
+        routerLink="products/susswassertang"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <button mat-menu-item>Süsswassertang</button>
+      </a>
+      <a
+        routerLink="products/moss-java"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <button mat-menu-item>Java Moss</button>
+        </a>
     </mat-menu>
   </div>
   <div style="margin: 0.5em">
@@ -57,15 +75,45 @@
     <mat-menu #TerrestrialPlants="matMenu">
       <button mat-menu-item [mat-menu-trigger-for]="Alocasia">Alocasia</button>
       <button mat-menu-item [mat-menu-trigger-for]="Monstera">Monstera</button>
-      <button mat-menu-item>Jade</button>
+      <a
+      routerLink="products/jade"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+        <button mat-menu-item>Jade</button>
+    </a>
     </mat-menu>
     <mat-menu #Alocasia="matMenu">
-      <button mat-menu-item>Melo</button>
-      <button mat-menu-item>Black Velvet</button>
+      <a
+      routerLink="products/alocasia-melo"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+        <button mat-menu-item>Melo</button>
+        </a>
+        <a
+      routerLink="products/alocasia-ninja"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+        <button mat-menu-item>Ninja</button>
+      </a>
     </mat-menu>
     <mat-menu #Monstera="matMenu">
-      <button mat-menu-item>Adansonii (Swiss Cheese)</button>
-      <button mat-menu-item>Thai Constellation</button>
+      <a
+      routerLink="products/monstera-swiss-cheese"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+        <button mat-menu-item>Adansonii (Swiss Cheese)</button>
+      </a>
+      <a
+      routerLink="products/monstera-thai-constellation"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+        <button mat-menu-item>Thai Constellation</button>
+      </a>
     </mat-menu>
   </div>
   <div style="margin: 0.5em">

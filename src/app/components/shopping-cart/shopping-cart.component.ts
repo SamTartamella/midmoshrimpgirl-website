@@ -6,11 +6,14 @@ import { GetCurrentShoppingCartService } from '../../services/getCurrentShopping
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { CurrencyPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [MatTableModule, MatCheckboxModule, MatButtonModule],
+  imports: [MatTableModule, MatCheckboxModule, MatButtonModule, MatCardModule, CurrencyPipe],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.scss'
 })
@@ -19,12 +22,16 @@ export class ShoppingCartComponent implements OnInit {
 
   columnsToDisplay: string[] = ['Product', 'Quantity', 'Total', 'Select'];
   shoppingCartItems: ShoppingCartItem[] = [];
+  orderQuantity: number = 0; 
+  orderTotal: number = 0;
 
   constructor(private cartService: GetCurrentShoppingCartService) {
 
   }
   ngOnInit(): void {
     this.cartService.currentCartObservable.subscribe(updatedCart => this.shoppingCartItems = updatedCart);
+    this.updateOrderQuantity(); 
+    this.updateOrderTotal();
   }
 
   toggleSelection(item: ShoppingCartItem) {
@@ -33,6 +40,19 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   removeFromCart(item: ShoppingCartItem) {
+    debugger;
     this.cartService.removeFromCart(item); 
+    this.updateOrderQuantity();
+    this.updateOrderTotal();
+  }
+
+  updateOrderQuantity() {
+    this.orderQuantity = 0;
+    this.shoppingCartItems.forEach((item) => this.orderQuantity = this.orderQuantity + item.quantity );
+  }
+
+  updateOrderTotal() {
+    this.orderTotal = 0;
+    this.shoppingCartItems.forEach((item) => this.orderTotal = this.orderTotal + item.total);
   }
 }

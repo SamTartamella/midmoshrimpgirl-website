@@ -33,8 +33,6 @@ export class ProductComponent implements OnInit {
   quantityCount: number = 1;
   totalPrice: number = 0;
 
-  cart: ShoppingCartItem[] = []; 
-
   ngOnInit(): void {
     this.route.url
       .pipe(

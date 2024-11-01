@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, first } from 'rxjs';
 import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,8 +16,25 @@ export class GetCurrentShoppingCartService {
 
   addToCart(newCartItem : ShoppingCartItem)
   {
-    this.currentShoppingCart.value.push(newCartItem); 
-    this.currentShoppingCart.next(this.currentShoppingCart.value); 
+    let isincart = false; 
+    this.currentShoppingCart.value.forEach((item) => {
+      if (item.product.productName == newCartItem.product.productName)
+      {
+        item.quantity = item.quantity + newCartItem.quantity; 
+        item.total = item.total + newCartItem.total; 
+        isincart = true;
+      }
+    })
+
+    if(isincart)
+    {
+      return; 
+    }
+    else 
+    {
+      this.currentShoppingCart.value.push(newCartItem); 
+      this.currentShoppingCart.next(this.currentShoppingCart.value); 
+    }
   }
 
   removeFromCart(itemToRemove : ShoppingCartItem)
