@@ -79,6 +79,7 @@ export class CheckoutComponent {
     Country: ['', Validators.required],
     FirstName: ['', Validators.required],
     LastName: ['', Validators.required],
+    Company: [''],
     Address: ['', Validators.required],
     ApartmentNumber: [''],
     City: ['', Validators.required],
