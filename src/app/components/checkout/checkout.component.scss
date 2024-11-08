@@ -1,0 +1,9 @@
+.longFormBar {
+    width:100%;
+}
+
+.shortFormBars {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+}

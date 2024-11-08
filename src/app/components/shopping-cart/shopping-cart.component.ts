@@ -8,12 +8,13 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CurrencyPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [MatTableModule, MatCheckboxModule, MatButtonModule, MatCardModule, CurrencyPipe],
+  imports: [MatTableModule, MatCheckboxModule, MatButtonModule, MatCardModule, CurrencyPipe, RouterLink],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.scss'
 })
