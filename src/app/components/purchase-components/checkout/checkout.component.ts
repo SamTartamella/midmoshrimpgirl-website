@@ -7,13 +7,19 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { CdkStepperModule } from '@angular/cdk/stepper'; 
+import { GetCurrentShoppingCartService } from '../../../services/getCurrentShoppingCart/get-current-shopping-cart';
+import { ShoppingCartItem } from '../../../models/shopping-cart-item.model';
+import { MatTableModule } from '@angular/material/table';
+import { SelectionModel } from '@angular/cdk/collections';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ShoppingCartComponent } from "../shopping-cart/shopping-cart.component";
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [MatButtonModule, MatStepperModule, 
-    MatFormFieldModule, FormsModule, ReactiveFormsModule, 
-    MatInputModule, MatSelectModule, CommonModule, CdkStepperModule],
+  imports: [MatButtonModule, MatStepperModule,
+    MatFormFieldModule, FormsModule, ReactiveFormsModule,
+    MatInputModule, MatSelectModule, CommonModule, CdkStepperModule, ShoppingCartComponent],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })
@@ -95,6 +101,10 @@ export class CheckoutComponent {
   confirmPurchase = this._formBuilder.group({
 
   });
+
+  constructor(private cartService: GetCurrentShoppingCartService) { }
+
+
 
   
 }

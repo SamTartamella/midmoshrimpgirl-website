@@ -37,9 +37,6 @@
             <h2>Subtotal ({{orderQuantity}} items)</h2>
             <h2>{{orderTotal | currency}}</h2>
         </div>
-        <div style="display: flex; justify-content: flex-end;">
-                <button mat-flat-button [routerLink]="['/checkout']" [disabled]="shoppingCartItems.length == 0">Proceed to Checkout</button>
-        </div>
     </div>
 </div>
 

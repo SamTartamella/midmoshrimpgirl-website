@@ -1,0 +1,4 @@
+<app-shopping-cart></app-shopping-cart>
+<div style="display: flex; justify-content: flex-end; margin: 0 15% 0 15%">
+    <button mat-flat-button [routerLink]="['/checkout']" [disabled]="shoppingCartItems.length == 0">Proceed to Checkout</button>
+</div>

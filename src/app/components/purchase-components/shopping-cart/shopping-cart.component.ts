@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { Product } from '../../models/product.model';
-import { ShoppingCartItem } from '../../models/shopping-cart-item.model';
-import { GetCurrentShoppingCartService } from '../../services/getCurrentShoppingCart/get-current-shopping-cart';
+import { ShoppingCartItem } from '../../../models/shopping-cart-item.model';
+import { GetCurrentShoppingCartService } from '../../../services/getCurrentShoppingCart/get-current-shopping-cart';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SelectionModel } from '@angular/cdk/collections';
-import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CurrencyPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-shopping-cart',
   standalone: true,
-  imports: [MatTableModule, MatCheckboxModule, MatButtonModule, MatCardModule, CurrencyPipe, RouterLink],
+  imports: [MatTableModule, MatCheckboxModule, MatCardModule, CurrencyPipe, RouterLink, MatButtonModule],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.scss'
 })
