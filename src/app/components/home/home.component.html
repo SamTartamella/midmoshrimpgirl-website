@@ -21,16 +21,20 @@
             <mat-grid-tile>
                 <mat-card appearance="outlined" class="custom-card">
                     <mat-card-content class="tile-content">
-                        <a
-                        routerLink="products/bloody-mary"
-                        routerLinkActive="active"
-                        ariaCurrentWhenActive="page"
-                        >
-                            <button mat-button>
-                                <img mat-card-image src="assets/websitepictures/bloodymaryresized1.jpg" class="tile-image">
-                                <h2> Bloody Mary Neocardinia</h2>
-                            </button>
-                        </a>
+                        <img mat-card-image src="assets/websitepictures/bloodymaryresized1.jpg" class="tile-image">
+                        <h2> Bloody Mary Neocardinia</h2>
+                        <mat-card-footer>
+                            <a
+                            routerLink="products/bloody-mary"
+                            routerLinkActive="active"
+                            ariaCurrentWhenActive="page"
+                            >
+                                <button mat-flat-button>
+                                    Shop
+                                </button>
+                            </a>
+                            <button mat-flat-button>Care</button>
+                        </mat-card-footer>
                     </mat-card-content>
                 </mat-card>
             </mat-grid-tile>
