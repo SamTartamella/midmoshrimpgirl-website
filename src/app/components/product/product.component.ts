@@ -24,12 +24,7 @@ export class ProductComponent implements OnInit {
     public route: ActivatedRoute
   ) {}
 
-  product: Product = 
-    {productName: 'placeholder', 
-     productPrice: 999, 
-     productImagePath: '/assets/whiteshrimp.png'};  
-
-  productPrice: number = 0;
+  product: Product = {};  
   quantityCount: number = 1;
   totalPrice: number = 0;
 
@@ -43,7 +38,6 @@ export class ProductComponent implements OnInit {
         })
       )
       .subscribe((result) => {
-        this.productPrice = result.productPrice;
         this.quantityCount = 1;
         this.product = result;
         this.calculatePrice();
@@ -63,7 +57,7 @@ export class ProductComponent implements OnInit {
   }
 
   calculatePrice(): void {
-    this.totalPrice = this.quantityCount * this.product.productPrice;
+    this.totalPrice = this.quantityCount * this.product.productPrice!; //TODO: remove ! 
   }
 
   addToCart(): void {

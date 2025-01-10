@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
