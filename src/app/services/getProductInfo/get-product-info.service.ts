@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { Product } from '../../models/product.model';
 import { HttpClient } from '@angular/common/http';
-import { GetProductResponse } from '../../models/getProductResponse.model';
+import { GetProductByUrlStringResponse } from '../../models/getProductResponse.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +11,9 @@ export class GetProductInfoService {
   private apiUrl = "http://localhost:5032/";
   constructor(private http: HttpClient) {}
 
-  getProductInfo(productName: string): Observable<Product> {
+  getProductInfo(productUrlSnippet: string): Observable<Product> {
 
-    return this.http.get<GetProductResponse>(`${this.apiUrl}products/${productName}`)
+    return this.http.get<GetProductByUrlStringResponse>(`${this.apiUrl}products/${productUrlSnippet}`)
       .pipe(map((response) => {
         return {
           productName: response.name,
