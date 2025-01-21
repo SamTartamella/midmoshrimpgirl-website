@@ -1,38 +1,31 @@
-<div style="display:flex; align-items: center; flex-direction: column;">
-    <!-- <h1>Homegrown shrimp and plants from the heart of Missouri!</h1> -->
-    <div style="width: 50em; height: 25%;">
-        <mat-grid-list cols="2" rowHeight="30em">
+<main class="home-container">
+    <section class="products-grid-container">
+        <mat-grid-list cols="2" rowHeight="30em" aria-label="Product grid">
             <mat-grid-tile>
                 <mat-card appearance="outlined" class="custom-card">
                     <mat-card-content class="tile-content">
-                        <a
-                        routerLink="products/red-cherry"
-                        routerLinkActive="active"
-                        ariaCurrentWhenActive="page"
-                        >
-                            <button mat-button>
-                                <img src="assets/websitepictures/redcherrysized1.jpg" class="tile-image">
-                                <h2> Red Cherry Neocardinia</h2>
+                        <a routerLink="products/red-cherry"
+                           routerLinkActive="active"
+                           ariaCurrentWhenActive="page"
+                           class="product-link">
+                            <button mat-button aria-label="View Red Cherry Neocardinia details">
+                                @if (isLoading) {
+                                    <div class="spinner-container">
+                                        <mat-progress-spinner
+                                            mode="indeterminate" 
+                                            diameter="40">
+                                        </mat-progress-spinner>
+                                    </div>
+                                } @else {
+                                    <img [src]="productOne.productImagePath" 
+                                        alt="'Red Cherry Neocardinia shrimp'"
+                                        class="tile-image">
+                                }
+                                <h2 class="product-title">Red Cherry Neocardinia</h2>
                             </button>
                         </a>
-                    </mat-card-content>
-                </mat-card>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <mat-card appearance="outlined" class="custom-card">
-                    <mat-card-content class="tile-content">
-                        <img mat-card-image src="assets/websitepictures/bloodymaryresized1.jpg" class="tile-image">
-                        <h2> Bloody Mary Neocardinia</h2>
-                        <mat-card-footer>
-                            <a
-                            routerLink="products/bloody-mary"
-                            routerLinkActive="active"
-                            ariaCurrentWhenActive="page"
-                            >
-                                <button mat-flat-button>
-                                    Shop
-                                </button>
-                            </a>
+                        <mat-card-footer class="card-footer">
+                            <button mat-flat-button color="primary" routerLink="products/red-cherry">Shop</button>
                             <button mat-flat-button>Care</button>
                         </mat-card-footer>
                     </mat-card-content>
@@ -41,62 +34,94 @@
             <mat-grid-tile>
                 <mat-card appearance="outlined" class="custom-card">
                     <mat-card-content class="tile-content">
-                        <a
-                        routerLink="products/galaxy-snowflake-blue"
-                        routerLinkActive="active"
-                        ariaCurrentWhenActive="page"
-                        >
-                            <button mat-button>
-                                <img src="assets/websitepictures/galaxysnowflakeblueresized1.jpg" class="tile-image">
-                                <h2> Blue Galaxy Snowflake Cardinia</h2>
+                        <a routerLink="products/bloody-mary"
+                           routerLinkActive="active"
+                           ariaCurrentWhenActive="page"
+                           class="product-link">
+                            <button mat-button aria-label="View Bloody Mary Neocardinia details">
+                                @if (isLoading) {
+                                    <div class="spinner-container">
+                                        <mat-progress-spinner 
+                                            mode="indeterminate" 
+                                            diameter="40">
+                                        </mat-progress-spinner>
+                                    </div>
+                                } @else {
+                                    <img [src]="productTwo.productImagePath" 
+                                        alt="Bloody Mary Neocardinia shrimp"
+                                        class="tile-image">
+                                }
+                                <h2 class="product-title">Bloody Mary Neocardinia</h2>
                             </button>
                         </a>
+                        <mat-card-footer class="card-footer">
+                            <button mat-flat-button color="primary" routerLink="products/bloody-mary">Shop</button>
+                            <button mat-flat-button>Care</button>
+                        </mat-card-footer>
                     </mat-card-content>
                 </mat-card>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-card appearance="outlined" class="custom-card">
                     <mat-card-content class="tile-content">
-                        <a
-                        routerLink="products/panda-black"
-                        routerLinkActive="active"
-                        ariaCurrentWhenActive="page"
-                        >
-                            <button mat-button>
-                                <img src="assets/websitepictures/pandablackresized1.jpg" class="tile-image">
-                                <h2> Black Panda Cardinia</h2>
+                        <a routerLink="products/galaxy-snowflake-blue"
+                           routerLinkActive="active"
+                           ariaCurrentWhenActive="page"
+                           class="product-link">
+                            <button mat-button aria-label="View Blue Galaxy Snowflake Cardinia details">
+                                @if (isLoading) {
+                                    <div class="spinner-container">
+                                        <mat-progress-spinner 
+                                            mode="indeterminate" 
+                                            diameter="40">
+                                        </mat-progress-spinner>
+                                    </div>
+                                } @else {
+                                    <img [src]="productThree.productImagePath" 
+                                        alt="Blue Galaxy Snowflake Cardinia shrimp"
+                                        class="tile-image">
+                                }
+                                <h2 class="product-title">Snowflake Cardinia</h2>
                             </button>
                         </a>
+                        <mat-card-footer class="card-footer">
+                            <button mat-flat-button color="primary" routerLink="products/galaxy-snowflake-blue">Shop</button>
+                            <button mat-flat-button>Care</button>
+                        </mat-card-footer>
                     </mat-card-content>
                 </mat-card>
             </mat-grid-tile>
-            <!-- <mat-grid-tile>
-                <a
-                routerLink="products/susswassertang"
-                routerLinkActive="active"
-                ariaCurrentWhenActive="page"
-                >
-                    <button mat-button>
-                        <img src="assets/websitepictures/Susswassertangresized.jpg">
-                        <p>Süsswassertang</p>
-                    </button>
-                </a>
-                </mat-grid-tile>
             <mat-grid-tile>
-                <a
-                routerLink="products/monstera-thai-constellation"
-                routerLinkActive="active"
-                ariaCurrentWhenActive="page"
-                >
-                    <button mat-button>
-                        <img src="assets/websitepictures/monsterathaiconstellation.jpg">
-                        <p>Thai Constellation Monstera</p>
-                    </button>
-                </a>
-            </mat-grid-tile> -->
+                <mat-card appearance="outlined" class="custom-card">
+                    <mat-card-content class="tile-content">
+                        <a routerLink="products/panda-black"
+                           routerLinkActive="active"
+                           ariaCurrentWhenActive="page"
+                           class="product-link">
+                            <button mat-button aria-label="View Black Panda Cardinia details">
+                                @if (isLoading) {
+                                    <div class="spinner-container">
+                                        <mat-progress-spinner 
+                                            mode="indeterminate" 
+                                            diameter="40">
+                                        </mat-progress-spinner>
+                                    </div>
+                                } @else {
+                                    <img [src]="productFour.productImagePath" 
+                                        alt="Black Panda Cardinia shrimp"
+                                        class="tile-image">
+                                }
+                                <h2 class="product-title">Black Panda Cardinia</h2>
+                            </button>
+                        </a>
+                        <mat-card-footer class="card-footer">
+                            <button mat-flat-button color="primary" routerLink="products/panda-black">Shop</button>
+                            <button mat-flat-button>Care</button>
+                        </mat-card-footer>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
         </mat-grid-list>
-    </div>
-    <p style="margin:2em"> What started as two shrimp in a single, desktop nano tank has turned into multiple breeder tanks and many beloved colonies!</p>
-</div>
-
-
+    </section>
+    <p class="intro-text">What started as two shrimp in a single, desktop nano tank has turned into multiple breeder tanks and many beloved colonies!</p>
+</main>
