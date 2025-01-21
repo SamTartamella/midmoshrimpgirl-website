@@ -6,10 +6,12 @@ a {
     display: flex; 
     justify-content: center; 
     margin-top: 1em;
-    min-width: 942px
+    max-width: 942px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .nav-button {
     margin: 0.5em
 }
-
