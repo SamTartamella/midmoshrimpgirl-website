@@ -22,7 +22,14 @@ $dark-theme: mat.define-theme(
 $card-color-dark: black; 
 $card-color-light: white; 
 
-html{
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html {
     @include mat.all-component-themes($light-theme);
     .mat-mdc-card {
         background-color: $card-color-light;
