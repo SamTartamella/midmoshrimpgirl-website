@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { Validators, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatInputModule, MatButtonModule, ReactiveFormsModule],
+  imports: [MatInputModule, MatButtonModule, ReactiveFormsModule, MatCardModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

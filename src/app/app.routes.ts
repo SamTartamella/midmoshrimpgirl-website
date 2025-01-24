@@ -5,11 +5,12 @@ import { ShoppingCartComponent } from './components/purchase-components/shopping
 import { CheckoutComponent } from './components/purchase-components/checkout/checkout.component';
 import { CartDisplayComponent } from './components/purchase-components/cart-display/cart-display.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'products/:item', component: ProductComponent }, //Will make product component. Template for product, info filled in from DB eventually.
-  { path: 'cart', component: CartDisplayComponent },
+  { path: 'products/:item', component: ProductComponent }, 
   { path: 'checkout', component: CheckoutComponent},
-  { path: 'contact', component: ContactComponent}
+  { path: 'contact', component: ContactComponent},
+  { path: 'about', component: AboutComponent}
 ];

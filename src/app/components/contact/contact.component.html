@@ -1,62 +1,68 @@
-<div style="display:flex; flex-direction: column; align-items: center; flex-wrap: wrap;">
-    <div>
-        <h4 style="font-family: 'Arial', Arial, sans-serif; font-size: 1.75em; margin: 1em 0;">
-            Contact Me
-        </h4>
+<div style="display:flex; flex-direction: column; align-items: center; margin: 1em auto; width: 55%;">
+    <mat-card appearance="outlined">
+        <div style="display:flex; flex-direction: column; align-items: center; flex-wrap: wrap;">
+            <mat-card-header>
+                <h4 style="font-size: 1.75em; margin: 1em 0;">
+                    Contact Me
+                </h4>
+            </mat-card-header>
+                <div style="text-align: center;">
+                    <p style="font-size: 1.5em; margin: -0.5em 1em 1em 1em;"> My name is Sam and I'm here to help!  If you have questions about your order,
+                        inquiries about wholesale, or just want to  say hi, please reach out! 
+                </div>
+            <mat-card-content>
+                <div>
+                    <form [formGroup]="emailInfo">
+                        <table>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Name</mat-label>
+                                        <input matInput formControlName="Name">
+                                        @if (emailInfo.get('Name')?.invalid && emailInfo.get('Name')?.touched)
+                                        {
+                                            <mat-error>Name is required</mat-error>
+                                        }
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput formControlName="Email">
+                                        @if (emailInfo.get('Email')?.invalid && emailInfo.get('Email')?.touched)
+                                        {
+                                            <mat-error>Invalid email</mat-error>
+                                        }
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="width: 100%;">
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Subject</mat-label>
+                                <input matInput formControlName="Subject">
+                                @if (emailInfo.get('Subject')?.invalid && emailInfo.get('Subject')?.touched)
+                                {
+                                    <mat-error>Subject is required</mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div style="width: 100%;">     
+                            <mat-form-field style="width: 100%;" appearance="outline">
+                                <mat-label>Message</mat-label>
+                                <textarea matInput formControlName="Message"></textarea>
+                                @if (emailInfo.get('Message')?.invalid && emailInfo.get('Message')?.touched)
+                                {
+                                    <mat-error>Message is required</mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div style="display: flex; justify-content: center;">
+                            <button type="submit" mat-flat-button style="width: 50%; margin: 0.5em;" [disabled]="emailInfo.invalid">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </mat-card-content>
     </div>
-    <div style="text-align: center;">
-        <p style="font-family: 'Arial', Arial, sans-serif; font-size: 1.5em; margin-top: -.5em;"> My name is Sam and I'm here to help! <br />If you have questions about your order, 
-            inquiries about wholesale, <br />or just want to say hi, please reach out!</p>
-    </div>
-    <div>
-        <form style="font-family: 'Arial Narrow', Arial, sans-serif;" [formGroup]="emailInfo">
-            <table>
-                <tr>
-                    <td>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Name</mat-label>
-                            <input matInput formControlName="Name">
-                            @if (emailInfo.get('Name')?.invalid && emailInfo.get('Name')?.touched)
-                            {
-                                <mat-error>Name is required</mat-error>
-                            }
-                        </mat-form-field>
-                    </td>
-                    <td>
-                        <mat-form-field appearance="outline">
-                            <mat-label>Email</mat-label>
-                            <input matInput formControlName="Email">
-                            @if (emailInfo.get('Email')?.invalid && emailInfo.get('Email')?.touched)
-                            {
-                                <mat-error>Invalid email</mat-error>
-                            }
-                        </mat-form-field>
-                    </td>
-                </tr>
-            </table>
-            <div style="width: 100%;">
-                <mat-form-field style="width: 100%;" appearance="outline">
-                    <mat-label>Subject</mat-label>
-                    <input matInput formControlName="Subject">
-                    @if (emailInfo.get('Subject')?.invalid && emailInfo.get('Subject')?.touched)
-                    {
-                        <mat-error>Subject is required</mat-error>
-                    }
-                </mat-form-field>
-            </div>
-            <div style="width: 100%;">     
-                <mat-form-field style="width: 100%;" appearance="outline">
-                    <mat-label>Message</mat-label>
-                    <textarea matInput formControlName="Message"></textarea>
-                    @if (emailInfo.get('Message')?.invalid && emailInfo.get('Message')?.touched)
-                    {
-                        <mat-error>Message is required</mat-error>
-                    }
-                </mat-form-field>
-            </div>
-            <div style="display: flex; justify-content: center;">
-                <button type="submit" mat-flat-button style="width: 50%; margin: 0.5em;" [disabled]="emailInfo.invalid">Send</button>
-            </div>
-        </form>
-    </div>
+    </mat-card>
 </div>

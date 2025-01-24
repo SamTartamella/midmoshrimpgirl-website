@@ -29,14 +29,28 @@ html, body {
     overflow-x: hidden;
 }
 
+body {
+  font-family: 'Arial', Arial, sans-serif;
+}
+
+app-header * {
+  font-family: initial;  // This will use the header's specified font
+}
+
 html {
     @include mat.all-component-themes($light-theme);
     .mat-mdc-card {
-        background-color: $card-color-light;
+        --mdc-elevated-card-container-color: transparent !important;
+        background-color: transparent !important;
+        border: 1px solid var(--mdc-outlined-text-field-outline-color);
+        
     }
     @media (prefers-color-scheme: dark) {
         .mat-mdc-card {
-            background-color: $card-color-dark;
+            --mdc-elevated-card-container-color: transparent !important;
+            background-color: transparent !important;
+            border: 1px solid var(--mdc-outlined-text-field-outline-color);
+            
         }
         @include mat.all-component-themes($dark-theme);
     }
