@@ -1,6 +1,6 @@
 import { Product } from "./product.model";
 
-export interface GetProductByUrlStringResponse {
+export interface GetProductResponse {
     name: string, 
     price: number, 
     imageLink: string

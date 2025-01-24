@@ -2,35 +2,6 @@
 
 @include mat.core();
 
-
-// @mixin theme($theme) {
-//     @if $theme == 'dark-mode' {
-//       @include dark.color-mixin();
-//     }
-//     @else {
-//       @include light.color-mixin();
-//     }
-//   }
-  
-//   .dark-mode {
-//     @include dark.color-mixin();
-//     transition: all 0.4s ease;
-//   }
-  
-//   .light-mode {
-//     @include light.color-mixin();
-//     transition: all 0.4s ease;
-//   }
-  
-//   :root {
-//     .dark-mode {
-//       --main-theme-variable: #{dark.$main-theme-variable};
-//      }
-//     .light-mode {
-//       --main-theme-variable: #{light.$main-theme-variable};
-//      }
-//   }
-
 $light-theme: mat.define-theme(
     (
         color: (
@@ -51,7 +22,14 @@ $dark-theme: mat.define-theme(
 $card-color-dark: black; 
 $card-color-light: white; 
 
-html{
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html {
     @include mat.all-component-themes($light-theme);
     .mat-mdc-card {
         background-color: $card-color-light;
