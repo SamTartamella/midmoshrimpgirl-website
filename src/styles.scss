@@ -2,6 +2,14 @@
 
 @include mat.core();
 
+:root {
+    @include mat.snack-bar-overrides((
+      container-color: #abc7ff,
+      supporting-text-color: #002f65,
+      button-color: #002f65
+    ));
+  }
+
 $light-theme: mat.define-theme(
     (
         color: (

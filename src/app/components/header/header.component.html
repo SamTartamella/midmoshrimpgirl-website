@@ -39,11 +39,12 @@
         </div>
       </div>
     </a>
-    <div style="display: flex; justify-content: center; margin-right: -71em;">
-      <a routerLink="cart" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <div style="display: flex; justify-content: flex-end; padding: 1rem;">
+      <a routerLink="cart" routerLinkActive="active" ariaCurrentWhenActive="page" style="cursor: pointer;" aria-label="Shopping Cart">
         <div style="display: flex">
           <mat-icon
-            matBadge="{{numberOfCartItems}}"
+            [matBadge]="numberOfCartItems"
+            [matBadgeHidden]="!numberOfCartItems"
             aria-hidden="false"
             style="font-size: 2.5em; width: 100%; height: 100%"
             >shopping_cart</mat-icon

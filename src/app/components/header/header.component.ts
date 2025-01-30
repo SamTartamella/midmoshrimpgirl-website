@@ -26,17 +26,14 @@ import { GetCurrentShoppingCartService } from '../../services/getCurrentShopping
 })
 export class HeaderComponent implements OnInit {
   imagePath: string = 'assets/whiteshrimp.png';
-  numberOfCartItems: number | string = ''; 
+  numberOfCartItems: number = 0;
 
   constructor(private cartService: GetCurrentShoppingCartService) {
 
   }
   ngOnInit(): void {
-    this.cartService.currentCartObservable.subscribe(currentCart => this.numberOfCartItems = currentCart.length);
-
-    if(this.numberOfCartItems === 0)
-    {
-      this.numberOfCartItems = '';
-    }
+    this.cartService.currentCartObservable.subscribe(currentCart => {
+      this.numberOfCartItems = currentCart?.length || 0;
+    });
   }
 }

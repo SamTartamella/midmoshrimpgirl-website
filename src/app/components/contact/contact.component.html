@@ -6,13 +6,13 @@
                     Contact Me
                 </h4>
             </mat-card-header>
+            <mat-card-content>
                 <div style="text-align: center;">
                     <p style="font-size: 1.5em; margin: -0.5em 1em 1em 1em;"> My name is Sam and I'm here to help!  If you have questions about your order,
                         inquiries about wholesale, or just want to  say hi, please reach out! 
                 </div>
-            <mat-card-content>
-                <div>
-                    <form [formGroup]="emailInfo">
+                <div style="align-items: center; display: flex; flex-direction: column;">
+                    <form [formGroup]="emailInfo">              
                         <table>
                             <tr>
                                 <td>
@@ -37,8 +37,8 @@
                                 </td>
                             </tr>
                         </table>
-                        <div style="width: 100%;">
-                            <mat-form-field style="width: 100%;" appearance="outline">
+                        <div >
+                            <mat-form-field appearance="outline" style="width: 100%">
                                 <mat-label>Subject</mat-label>
                                 <input matInput formControlName="Subject">
                                 @if (emailInfo.get('Subject')?.invalid && emailInfo.get('Subject')?.touched)
@@ -47,8 +47,8 @@
                                 }
                             </mat-form-field>
                         </div>
-                        <div style="width: 100%;">     
-                            <mat-form-field style="width: 100%;" appearance="outline">
+                        <div>     
+                            <mat-form-field appearance="outline" style="width: 100%">
                                 <mat-label>Message</mat-label>
                                 <textarea matInput formControlName="Message"></textarea>
                                 @if (emailInfo.get('Message')?.invalid && emailInfo.get('Message')?.touched)
@@ -58,7 +58,13 @@
                             </mat-form-field>
                         </div>
                         <div style="display: flex; justify-content: center;">
-                            <button type="submit" mat-flat-button style="width: 50%; margin: 0.5em;" [disabled]="emailInfo.invalid">Send</button>
+                            <button type="reset" 
+                                mat-flat-button 
+                                style="width: 50%; margin: 0.5em;" 
+                                [disabled]="emailInfo.invalid" 
+                                (click)="onSubmit();">
+                                Send
+                            </button>
                         </div>
                     </form>
                 </div>
