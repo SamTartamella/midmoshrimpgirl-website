@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70em
 }
 
 .centered-heading {
@@ -15,12 +16,13 @@
     width: 90%;
 }
 
-.nextButtonContainer {
+.buttonContainer {
   display: flex;
   justify-content: space-around;
   margin: 1em;
+  width: 90%
 }
 
-.nextButton {
+.button {
   width: 35%;
 }

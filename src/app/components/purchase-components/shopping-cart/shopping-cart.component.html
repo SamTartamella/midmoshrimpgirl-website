@@ -1,4 +1,5 @@
-<div style="display: flex; justify-content: center; width: 70em;">
+<div style="display: flex; justify-content: center; max-width: 1000px; 
+    min-width: 1000px">
     <div class="shopping-cart-container">
         <h2 class="centered-heading">Your Cart</h2>
         <div class="cart-content">
@@ -32,8 +33,8 @@
             <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
             </table>
         </div>
-        <div class="nextButtonContainer">
-            <div style="display: flex; justify-content: space-between;">
+        <div class="buttonContainer">
+            <div style="display: flex; justify-content: space-between; width: 60em">
                 <h2>Subtotal ({{orderQuantity}} items)</h2>
                 <h2>{{orderTotal | currency}}</h2>
             </div>
