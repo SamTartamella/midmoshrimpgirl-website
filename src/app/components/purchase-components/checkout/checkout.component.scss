@@ -2,8 +2,57 @@
     width:100%;
 }
 
+.longFormDiv {
+    width: 90%;
+}
 .shortFormBars {
     display: flex; 
     flex-direction: row; 
     justify-content: space-between;
+    width: 90%
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.contact-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30em;
+}
+
+.contactInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.delivery-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40em;
+}
+
+.half-width {
+  width: 48.5%;
+}
+
+.longFormBar {
+  width: 100%;
+}
+
+.nextButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 1em;
+}
+
+.nextButton {
+    width: 35%;
 }

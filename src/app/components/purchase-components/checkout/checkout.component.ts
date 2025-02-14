@@ -13,13 +13,14 @@ import { MatTableModule } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ShoppingCartComponent } from "../shopping-cart/shopping-cart.component";
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
   imports: [MatButtonModule, MatStepperModule,
     MatFormFieldModule, FormsModule, ReactiveFormsModule,
-    MatInputModule, MatSelectModule, CommonModule, CdkStepperModule, ShoppingCartComponent],
+    MatInputModule, MatSelectModule, CommonModule, CdkStepperModule, ShoppingCartComponent, MatCardModule],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })
