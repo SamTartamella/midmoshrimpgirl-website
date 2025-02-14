@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 import { GetCurrentShoppingCartService } from '../../../services/getCurrentShoppingCart/get-current-shopping-cart';
 import { ShoppingCartItem } from '../../../models/shopping-cart-item.model';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';   
 
 @Component({
   selector: 'app-cart-display',
   standalone: true,
-  imports: [ShoppingCartComponent, RouterLink, MatButtonModule],
+  imports: [ShoppingCartComponent, RouterLink, MatButtonModule, MatCardModule],
   templateUrl: './cart-display.component.html',
   styleUrl: './cart-display.component.scss'
 })

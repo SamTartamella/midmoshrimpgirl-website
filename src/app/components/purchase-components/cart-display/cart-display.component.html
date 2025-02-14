@@ -1,4 +1,9 @@
-<app-shopping-cart></app-shopping-cart>
-<div style="display: flex; justify-content: flex-end; margin: 0 15% 0 15%">
-    <button mat-flat-button [routerLink]="['/checkout']" [disabled]="shoppingCartItems.length == 0">Proceed to Checkout</button>
-</div>
+<mat-card appearance="outlined" style="display: flex; flex-direction: column; align-items: center; margin: 1em auto; width: 55%; padding: 2rem; width: 70em">
+    <div>
+        <app-shopping-cart></app-shopping-cart>
+        <div style="display: flex; justify-content: space-around; margin: 1em">
+            <button style="width: 35em" mat-flat-button [routerLink]="['/checkout']" [disabled]="shoppingCartItems.length == 0">Proceed to Checkout</button>
+        </div>
+    </div>
+</mat-card>
+

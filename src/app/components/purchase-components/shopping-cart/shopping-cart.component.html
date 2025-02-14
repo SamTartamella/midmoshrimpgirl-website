@@ -1,7 +1,7 @@
-<div style="display:flex; flex-direction: column;">
-    <div style="margin: 0 15% 0 15%">
-        <h2 style="text-align: center;">Your Cart</h2>
-        <div style="margin: 2em 0 2em 0">
+<div style="display: flex; justify-content: center; width: 70em;">
+    <div class="shopping-cart-container">
+        <h2 class="centered-heading">Your Cart</h2>
+        <div class="cart-content">
             <table mat-table [dataSource]="shoppingCartItems">
                 <ng-container matColumnDef="Product">
                     <th mat-header-cell *matHeaderCellDef>Product</th>
@@ -27,15 +27,16 @@
                     </mat-checkbox>
                     <button mat-flat-button [disabled]="!selection.isSelected(item)" (click)="removeFromCart(item)">Remove</button>
                 </td>   
-                </ng-container>
-        
+                </ng-container>       
             <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
             <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
             </table>
         </div>
-        <div style="display: flex; justify-content: space-between;">
-            <h2>Subtotal ({{orderQuantity}} items)</h2>
-            <h2>{{orderTotal | currency}}</h2>
+        <div class="nextButtonContainer">
+            <div style="display: flex; justify-content: space-between;">
+                <h2>Subtotal ({{orderQuantity}} items)</h2>
+                <h2>{{orderTotal | currency}}</h2>
+            </div>
         </div>
     </div>
 </div>

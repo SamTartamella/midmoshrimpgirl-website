@@ -1,0 +1,26 @@
+.shopping-cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-heading {
+  text-align: center;
+}
+
+.cart-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.nextButtonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 1em;
+}
+
+.nextButton {
+  width: 35%;
+}
