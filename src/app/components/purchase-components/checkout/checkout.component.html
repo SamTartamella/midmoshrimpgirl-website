@@ -100,9 +100,11 @@
             <form [formGroup]="confirmPurchase">
                 <ng-template matStepLabel>Confirm Purchase</ng-template>
                 <mat-card appearance="outlined">
-                    <app-shopping-cart></app-shopping-cart>
-                    <div class="nextButtonContainer">
-                        <button class="nextButton" mat-flat-button matStepperNext>Confirm Purchase</button>
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <app-shopping-cart></app-shopping-cart>
+                        <div class="nextButtonContainer">
+                            <button style="width: 30em" mat-flat-button matStepperNext>Confirm Purchase</button>
+                        </div>
                     </div>
                 </mat-card>
             </form>
